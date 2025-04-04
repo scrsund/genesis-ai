@@ -4,13 +4,13 @@ const Footer = () => {
       {/* Background effect */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(79,70,229,0.03),transparent_50%)]"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-12 gap-8 md:gap-12">
           {/* Logo and description */}
           <div className="md:col-span-4">
             <a
               href="#"
-              className="flex items-center gap-2 group mb-4 relative px-4 py-2 w-fit"
+              className="flex items-center gap-2 group mb-4 relative px-2 py-2 w-fit"
             >
               <div className="absolute inset-0 bg-white/5 rounded-lg backdrop-blur-sm group-hover:bg-white/10 transition-colors"></div>
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15),transparent_70%)]"></div>
@@ -19,7 +19,7 @@ const Footer = () => {
                   <div className="absolute inset-0 bg-white rounded-full blur-lg opacity-60 group-hover:opacity-85 transition-opacity"></div>
                   <span className="w-2 h-2 rounded-full bg-white relative z-10 block group-hover:scale-110 transition-transform"></span>
                 </div>
-                <span className="text-xl font-bold font-display tracking-wider">
+                <span className="text-xl font-['DM_Sans'] font-black tracking-wide text-white/90">
                   Genesis
                   <span className="text-white">AI</span>
                 </span>

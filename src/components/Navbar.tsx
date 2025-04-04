@@ -23,11 +23,11 @@ const Navbar = () => {
           : "bg-transparent py-5"
       }`}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           <a
             href="#"
-            className="text-2xl font-bold text-white flex items-center gap-2 group relative px-4 py-2"
+            className="text-2xl font-bold text-white flex items-center gap-2 group relative px-2 py-2"
           >
             <div className="absolute inset-0 bg-white/5 rounded-lg backdrop-blur-sm group-hover:bg-white/10 transition-colors"></div>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15),transparent_70%)]"></div>
@@ -36,7 +36,7 @@ const Navbar = () => {
                 <div className="absolute inset-0 bg-white rounded-full blur-lg opacity-60 group-hover:opacity-85 transition-opacity"></div>
                 <span className="w-2 h-2 rounded-full bg-white relative z-10 block group-hover:scale-110 transition-transform"></span>
               </div>
-              <span className="font-display tracking-wider relative">
+              <span className="font-['DM_Sans'] font-black tracking-wide text-white/90 relative">
                 Genesis
                 <span className="text-white">AI</span>
               </span>
@@ -44,7 +44,7 @@ const Navbar = () => {
           </a>
         </div>
 
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-6">
           <a
             href="#problem"
             className="text-white/60 hover:text-white transition-colors relative group"
