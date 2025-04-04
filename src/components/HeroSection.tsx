@@ -40,8 +40,8 @@ const HeroSection = () => {
 
       {/* Content container */}
       <div className="container mx-auto px-4 sm:px-6 py-16 relative z-10 max-w-7xl">
-        <div className="flex flex-col items-center text-center mb-12">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/5 to-purple-500/5 backdrop-blur-sm px-5 py-2.5 rounded-full mb-8 border border-white/5 hover:border-primary/20 transition-colors group">
+        <div className="flex flex-col items-center text-center mb-6">
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/5 to-purple-500/5 backdrop-blur-sm px-5 py-2.5 rounded-full mb-4 border border-white/5 hover:border-primary/20 transition-colors group">
             <span className="h-1.5 w-1.5 rounded-full bg-primary group-hover:animate-ping"></span>
             <span className="text-xs font-medium tracking-wider uppercase text-white/70 group-hover:text-primary transition-colors">
               Now Automating Client Experiences
