@@ -1,9 +1,25 @@
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ValueSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add resize listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const features = [
     {
@@ -61,13 +77,17 @@ const ValueSection = () => {
             <div
               key={idx}
               className="group relative"
-              onMouseEnter={() => setHoveredIndex(idx)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              onMouseEnter={() => !isMobile && setHoveredIndex(idx)}
+              onMouseLeave={() => !isMobile && setHoveredIndex(null)}
             >
               {/* Glow effect container */}
               <div
                 className={`absolute inset-0 bg-gradient-to-r from-purple-500/10 to-purple-400/10 transition-opacity duration-300 -mx-4 -my-2 rounded-xl backdrop-blur-sm ${
-                  idx === 0
+                  isMobile
+                    ? idx === 0 || idx === 2
+                      ? "opacity-100"
+                      : "opacity-0"
+                    : idx === 0
                     ? isFirstColumnActive
                       ? "opacity-100"
                       : "opacity-0"
@@ -80,7 +100,11 @@ const ValueSection = () => {
               {/* Category Header */}
               <div
                 className={`relative border transition-all duration-300 ${
-                  idx === 0
+                  isMobile
+                    ? idx === 0 || idx === 2
+                      ? "border-white/10 bg-white/5"
+                      : "border-white/[0.02] bg-black/50"
+                    : idx === 0
                     ? isFirstColumnActive
                       ? "border-white/10 bg-white/5"
                       : "border-white/[0.02] bg-black/50"
@@ -91,7 +115,11 @@ const ValueSection = () => {
               >
                 <h3
                   className={`text-2xl font-bold mb-2 transition-all duration-300 ${
-                    idx === 0
+                    isMobile
+                      ? idx === 0 || idx === 2
+                        ? "text-white"
+                        : "text-white/90"
+                      : idx === 0
                       ? isFirstColumnActive
                         ? "text-white"
                         : "text-white/90"
@@ -110,7 +138,11 @@ const ValueSection = () => {
                   <div
                     key={index}
                     className={`flex items-start gap-4 transition-all duration-300 ${
-                      idx === 0
+                      isMobile
+                        ? idx === 0 || idx === 2
+                          ? "border-white/10 bg-white/5"
+                          : "border-white/[0.02] bg-black/50"
+                        : idx === 0
                         ? isFirstColumnActive
                           ? "border-white/10 bg-white/5"
                           : "border-white/[0.02] bg-black/50"
@@ -121,7 +153,11 @@ const ValueSection = () => {
                   >
                     <div
                       className={`mt-1 p-1 rounded-full transition-colors duration-300 ${
-                        idx === 0
+                        isMobile
+                          ? idx === 0 || idx === 2
+                            ? "bg-purple-500/20"
+                            : "bg-purple-500/10"
+                          : idx === 0
                           ? isFirstColumnActive
                             ? "bg-purple-500/20"
                             : "bg-purple-500/10"
@@ -134,7 +170,11 @@ const ValueSection = () => {
                     </div>
                     <p
                       className={`text-base transition-colors duration-300 ${
-                        idx === 0
+                        isMobile
+                          ? idx === 0 || idx === 2
+                            ? "text-white"
+                            : "text-white/80"
+                          : idx === 0
                           ? isFirstColumnActive
                             ? "text-white"
                             : "text-white/80"

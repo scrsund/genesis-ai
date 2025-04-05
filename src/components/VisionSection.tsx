@@ -1,9 +1,25 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const VisionSection = () => {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add resize listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -114,7 +130,7 @@ const VisionSection = () => {
                 style={
                   {
                     transitionDelay: "0.2s",
-                    "--final-translate": "2rem",
+                    "--final-translate": isMobile ? "0px" : "2rem",
                     transitionProperty: "transform, opacity",
                     transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
                     transitionDuration: "2000ms, 1000ms",
@@ -141,7 +157,7 @@ const VisionSection = () => {
                 style={
                   {
                     transitionDelay: "0.3s",
-                    "--final-translate": "4rem",
+                    "--final-translate": isMobile ? "0px" : "4rem",
                     transitionProperty: "transform, opacity",
                     transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
                     transitionDuration: "2000ms, 1000ms",
