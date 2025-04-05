@@ -1,5 +1,6 @@
 import { Clock, AlertTriangle, ArrowDown, Users } from "lucide-react";
 import { useEffect, useRef } from "react";
+import React from "react";
 
 const ProblemSection = () => {
   const problems = [
@@ -86,9 +87,12 @@ const ProblemSection = () => {
               >
                 {/* Icon side */}
                 <div className="w-full md:w-1/3">
-                  <div className="aspect-square flex items-center justify-center border border-white/10 bg-black/50 rounded-lg p-8 hover:border-purple-500/40 transition-all">
-                    <div className="p-4 rounded-full bg-purple-500/10">
-                      {problem.icon}
+                  <div className="aspect-square flex items-center justify-center border border-white/10 bg-gradient-to-br from-black/50 via-purple-500/5 to-black/50 rounded-lg p-8 hover:border-purple-500/40 transition-all group">
+                    <div className="p-6 rounded-full bg-gradient-to-r from-purple-500/10 to-indigo-500/10 group-hover:from-purple-500/20 group-hover:to-indigo-500/20 transition-all">
+                      {React.cloneElement(problem.icon as React.ReactElement, {
+                        className:
+                          "w-12 h-12 text-purple-400 group-hover:text-purple-300 transition-colors",
+                      })}
                     </div>
                   </div>
                 </div>
