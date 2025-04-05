@@ -17,7 +17,9 @@ const CTASection = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
               The future belongs to{" "}
               <span className="relative">
-                <span className="relative z-10 text-white">the builders</span>
+                <span className="relative z-10 text-white whitespace-nowrap">
+                  the builders
+                </span>
                 <span className="absolute inset-x-0 bottom-0 h-3 bg-gradient-to-r from-indigo-500/30 to-purple-500/30 blur-sm"></span>
               </span>
               .
