@@ -38,7 +38,7 @@ const ProblemSection = () => {
           {/* Section header */}
           <div className="md:max-w-2xl mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6">
-              Don't delay your foundation — the future won't wait.
+              Don't delay your automation — the future won't wait.
             </h2>
           </div>
 

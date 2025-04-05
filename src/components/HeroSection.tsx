@@ -47,9 +47,9 @@ const HeroSection = () => {
       {/* Content container */}
       <div className="container mx-auto px-4 sm:px-6 py-16 relative z-10 max-w-7xl">
         <div className="flex flex-col items-center text-center mb-6">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500/10 to-purple-400/10 backdrop-blur-sm px-5 py-2.5 rounded-full mb-4 border border-white/5 hover:border-purple-500/20 transition-colors group">
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500/10 to-purple-400/10 backdrop-blur-sm px-5 py-2.5 rounded-full mb-4 border border-white/5 hover:border-white/30 hover:bg-white/10 hover:shadow-lg hover:shadow-white/10 transition-all duration-300 group">
             <span className="h-1.5 w-1.5 rounded-full bg-purple-400 group-hover:animate-ping"></span>
-            <span className="text-xs font-medium tracking-wider uppercase text-white/80 group-hover:text-purple-300 transition-colors">
+            <span className="text-xs font-medium tracking-wider uppercase text-white/80 group-hover:text-white transition-colors">
               Now Automating Client Experiences
             </span>
           </div>
