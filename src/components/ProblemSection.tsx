@@ -1,4 +1,5 @@
 import { Clock, AlertTriangle, ArrowDown, Users } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const ProblemSection = () => {
   const problems = [
@@ -28,6 +29,37 @@ const ProblemSection = () => {
     },
   ];
 
+  const problemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("animate-out");
+            entry.target.classList.add("animate");
+          } else {
+            // Only animate out if it was previously animated in
+            if (entry.target.classList.contains("animate")) {
+              entry.target.classList.remove("animate");
+              entry.target.classList.add("animate-out");
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "-50px",
+      }
+    );
+
+    problemRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="problem" className="relative bg-black py-20 overflow-hidden">
       {/* Background grid */}
@@ -47,9 +79,10 @@ const ProblemSection = () => {
             {problems.map((problem, index) => (
               <div
                 key={index}
+                ref={(el) => (problemRefs.current[index] = el)}
                 className={`flex flex-col md:flex-row gap-8 items-center ${
                   index % 2 === 1 ? "md:flex-row-reverse" : ""
-                }`}
+                } ${index % 2 === 0 ? "slide-in-left" : "slide-in-right"}`}
               >
                 {/* Icon side */}
                 <div className="w-full md:w-1/3">
