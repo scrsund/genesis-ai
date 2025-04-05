@@ -27,19 +27,14 @@ const Navbar = () => {
         <div className="flex items-center">
           <a
             href="#"
-            className="text-2xl font-bold text-white flex items-center gap-2 group relative px-2 py-2"
+            className="text-2xl font-bold text-white flex items-center gap-2"
           >
-            <div className="absolute inset-0 bg-white/5 rounded-lg backdrop-blur-sm group-hover:bg-white/10 transition-colors"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15),transparent_70%)]"></div>
-            <div className="relative flex items-center gap-2">
-              <div className="relative">
-                <div className="absolute inset-0 bg-white rounded-full blur-lg opacity-60 group-hover:opacity-85 transition-opacity"></div>
-                <span className="w-2 h-2 rounded-full bg-white relative z-10 block group-hover:scale-110 transition-transform"></span>
-              </div>
-              <span className="font-['DM_Sans'] font-black tracking-wide text-white/90 relative">
-                Genesis
-                <span className="text-white">AI</span>
-              </span>
+            <div className="relative flex items-center">
+              <img
+                src="/logo.jpeg"
+                alt="Genesis AI Logo"
+                className="h-16 w-auto"
+              />
             </div>
           </a>
         </div>
