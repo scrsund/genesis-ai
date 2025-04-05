@@ -218,4 +218,20 @@
   .slide-in-right.animate-out {
     animation: slide-out-right 1.2s ease-out forwards;
   }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .blink-animation {
+    animation: blink 0.75s ease-in-out infinite;
+  }
 }
