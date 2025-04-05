@@ -105,16 +105,14 @@ const HeroSection = () => {
             className="border border-white/5 rounded-xl p-1 shadow-xl bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-transparent opacity-0 animate-fade-in-up order-2"
             style={{ animationDelay: "0.8s" }}
           >
-            <div className="relative pb-[56.25%] overflow-hidden rounded-lg bg-black/30 backdrop-blur-sm">
-              {/* Placeholder for video */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-indigo-500/10 to-purple-500/10 flex items-center justify-center group-hover:from-indigo-500/20 group-hover:to-purple-500/20 transition-colors">
-                  <Youtube className="w-8 h-8 text-indigo-400" />
-                </div>
-                <p className="mt-4 text-white/60 text-center">
-                  Watch how Genesis AI works
-                </p>
-              </div>
+            <div className="relative pb-[56.25%] overflow-hidden rounded-lg bg-black/30">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/xgNLpxTaBKY?autoplay=0&rel=0&modestbranding=1"
+                title="Genesis AI Demo Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
 
