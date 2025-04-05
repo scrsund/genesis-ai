@@ -57,8 +57,11 @@ const HeroSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-8 items-center">
           {/* Left Content */}
-          <div className="text-left">
-            <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight mb-6">
+          <div className="text-left animate-fade-in-up">
+            <h1
+              className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight mb-6 opacity-0 animate-fade-in-up"
+              style={{ animationDelay: "0.2s" }}
+            >
               We{" "}
               <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
                 automate
@@ -66,13 +69,19 @@ const HeroSection = () => {
               your foundation.
             </h1>
 
-            <p className="text-lg text-white/70 mb-8 max-w-lg">
+            <p
+              className="text-lg text-white/70 mb-8 max-w-lg opacity-0 animate-fade-in-up"
+              style={{ animationDelay: "0.4s" }}
+            >
               Genesis installs an AI-powered assistant that automates your
               client intake and appointment booking — so you can focus on
               building your vision.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div
+              className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up"
+              style={{ animationDelay: "0.6s" }}
+            >
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-indigo-600 hover:to-purple-600 font-medium"
@@ -92,7 +101,10 @@ const HeroSection = () => {
           </div>
 
           {/* Right Content */}
-          <div className="border border-white/5 rounded-xl p-1 shadow-xl bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-transparent">
+          <div
+            className="border border-white/5 rounded-xl p-1 shadow-xl bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-transparent opacity-0 animate-fade-in-up"
+            style={{ animationDelay: "0.8s" }}
+          >
             <div className="relative pb-[56.25%] overflow-hidden rounded-lg bg-black/30 backdrop-blur-sm">
               {/* Placeholder for video */}
               <div className="absolute inset-0 flex flex-col items-center justify-center">
