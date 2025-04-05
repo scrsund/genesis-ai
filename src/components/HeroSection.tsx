@@ -57,9 +57,9 @@ const HeroSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-8 items-center">
           {/* Left Content */}
-          <div className="text-left animate-fade-in-up">
+          <div className="text-left animate-fade-in-up order-1 md:order-1">
             <h1
-              className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight mb-6 opacity-0 animate-fade-in-up"
+              className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 opacity-0 animate-fade-in-up"
               style={{ animationDelay: "0.2s" }}
             >
               We{" "}
@@ -79,7 +79,7 @@ const HeroSection = () => {
             </p>
 
             <div
-              className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up"
+              className="hidden md:flex flex-row gap-4 opacity-0 animate-fade-in-up"
               style={{ animationDelay: "0.6s" }}
             >
               <Button
@@ -100,9 +100,9 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Content */}
+          {/* Right Content - Video */}
           <div
-            className="border border-white/5 rounded-xl p-1 shadow-xl bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-transparent opacity-0 animate-fade-in-up"
+            className="border border-white/5 rounded-xl p-1 shadow-xl bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-transparent opacity-0 animate-fade-in-up order-2"
             style={{ animationDelay: "0.8s" }}
           >
             <div className="relative pb-[56.25%] overflow-hidden rounded-lg bg-black/30 backdrop-blur-sm">
@@ -116,6 +116,28 @@ const HeroSection = () => {
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Mobile-only Buttons */}
+          <div
+            className="flex md:hidden flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up order-3"
+            style={{ animationDelay: "0.6s" }}
+          >
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-indigo-600 hover:to-purple-600 font-medium"
+            >
+              Try Genesis Live
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-white/10 text-white hover:bg-white/5"
+            >
+              Book a Demo
+            </Button>
           </div>
         </div>
       </div>
