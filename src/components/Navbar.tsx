@@ -33,7 +33,7 @@ const Navbar = () => {
               <img
                 src="/logo.jpeg"
                 alt="Genesis AI Logo"
-                className="h-16 w-auto"
+                className="h-10 sm:h-12 md:h-16 w-auto mix-blend-lighten opacity-95"
               />
             </div>
           </a>
