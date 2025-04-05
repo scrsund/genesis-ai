@@ -1,7 +1,52 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useRef } from "react";
 
 const VisionSection = () => {
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Start animation
+            entry.target.classList.remove("translate-x-[200px]", "opacity-0");
+            entry.target.classList.add(
+              "translate-x-[var(--final-translate)]",
+              "opacity-100"
+            );
+          } else {
+            // Reset animation without transition
+            entry.target.classList.add("duration-0");
+            entry.target.classList.add("translate-x-[200px]", "opacity-0");
+            entry.target.classList.remove(
+              "translate-x-[var(--final-translate)]",
+              "opacity-100"
+            );
+            // Force a reflow to apply the changes immediately
+            void (entry.target as HTMLElement).offsetWidth;
+            // Restore transition duration
+            entry.target.classList.remove("duration-0");
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "-50px",
+      }
+    );
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) {
+        ref.classList.add("translate-x-[200px]", "opacity-0");
+        observer.observe(ref);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="vision" className="relative bg-black py-20 overflow-hidden">
       {/* Animated background elements */}
@@ -36,7 +81,19 @@ const VisionSection = () => {
           <div className="md:col-span-7">
             <div className="space-y-8">
               {/* Vision Card 1 */}
-              <div className="group border border-white/10 bg-black/50 p-8 rounded-lg hover:border-purple-500/40 transition-all">
+              <div
+                ref={(el) => (cardRefs.current[0] = el)}
+                className="group border border-white/10 bg-black/50 p-8 rounded-lg hover:border-purple-500/40 transition-[transform,opacity] duration-[2000ms] ease-out"
+                style={
+                  {
+                    transitionDelay: "0.1s",
+                    "--final-translate": "0px",
+                    transitionProperty: "transform, opacity",
+                    transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+                    transitionDuration: "2000ms, 1000ms",
+                  } as React.CSSProperties
+                }
+              >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="h-1 w-12 bg-purple-500/50 rounded-full"></div>
                   <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
@@ -51,7 +108,19 @@ const VisionSection = () => {
               </div>
 
               {/* Vision Card 2 */}
-              <div className="group border border-white/10 bg-black/50 p-8 rounded-lg hover:border-purple-500/40 transition-all md:translate-x-8">
+              <div
+                ref={(el) => (cardRefs.current[1] = el)}
+                className="group border border-white/10 bg-black/50 p-8 rounded-lg hover:border-purple-500/40 transition-[transform,opacity] duration-[2000ms] ease-out"
+                style={
+                  {
+                    transitionDelay: "0.2s",
+                    "--final-translate": "2rem",
+                    transitionProperty: "transform, opacity",
+                    transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+                    transitionDuration: "2000ms, 1000ms",
+                  } as React.CSSProperties
+                }
+              >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="h-1 w-12 bg-purple-500/50 rounded-full"></div>
                   <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
@@ -66,7 +135,19 @@ const VisionSection = () => {
               </div>
 
               {/* Vision Card 3 */}
-              <div className="group border border-white/10 bg-black/50 p-8 rounded-lg hover:border-purple-500/40 transition-all md:translate-x-16">
+              <div
+                ref={(el) => (cardRefs.current[2] = el)}
+                className="group border border-white/10 bg-black/50 p-8 rounded-lg hover:border-purple-500/40 transition-[transform,opacity] duration-[2000ms] ease-out"
+                style={
+                  {
+                    transitionDelay: "0.3s",
+                    "--final-translate": "4rem",
+                    transitionProperty: "transform, opacity",
+                    transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+                    transitionDuration: "2000ms, 1000ms",
+                  } as React.CSSProperties
+                }
+              >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="h-1 w-12 bg-purple-500/50 rounded-full"></div>
                   <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
