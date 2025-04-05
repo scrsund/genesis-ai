@@ -26,7 +26,7 @@ const SolutionSection = () => {
           <div className="md:col-span-5 lg:col-span-4 flex items-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
               We help you start strong —
-              <span className="block mt-2 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
+              <span className="block mt-2">
                 with automation as your foundation.
               </span>
             </h2>
